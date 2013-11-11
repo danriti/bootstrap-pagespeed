@@ -6,7 +6,8 @@
 		AllowOverride None
 		Order allow,deny
 		allow from all
-        ModPageSpeed off
+        ModPageSpeed on
+        ModPagespeedRewriteLevel CoreFilters
 	</Directory>
 
 	ErrorLog ${APACHE_LOG_DIR}/error.log
