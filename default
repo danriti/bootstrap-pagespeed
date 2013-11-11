@@ -6,7 +6,16 @@
 		AllowOverride None
 		Order allow,deny
 		allow from all
-        ModPageSpeed off
+
+        # Expires Settings
+        ExpiresActive On
+        ExpiresDefault                       "access plus 1 month"
+        ExpiresByType text/css               "access plus 1 year"
+        ExpiresByType application/javascript "access plus 1 year"
+
+        # PageSpeed Settings
+        ModPageSpeed on
+        ModPagespeedRewriteLevel CoreFilters
 	</Directory>
 
 	ErrorLog ${APACHE_LOG_DIR}/error.log
