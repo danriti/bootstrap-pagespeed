@@ -376,12 +376,22 @@
 
     </div> <!-- /container -->
 
+    <!-- JS -->
+    <script type="text/javascript">
+    // Add a script element as a child of the body
+    function downloadJSAtOnload() {
+    var element = document.createElement("script");
+    element.src = "scripts/all.min.js";
+    document.body.appendChild(element);
+    }
 
-    <!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="scripts/jquery.js"></script>
-    <script src="scripts/bootstrap.js"></script>
-    <script src="scripts/holder.js"></script>
+    // Check for browser support of event handling capability
+    if (window.addEventListener)
+    window.addEventListener("load", downloadJSAtOnload, false);
+    else if (window.attachEvent)
+    window.attachEvent("onload", downloadJSAtOnload);
+    else window.onload = downloadJSAtOnload;
+    </script>
+    <!-- /JS -->
   </body>
 </html>
