@@ -10,10 +10,127 @@
     <title>Theme Template for Bootstrap</title>
 
     <!-- CSS -->
-    <link href="styles/bootstrap.min.css" rel="stylesheet">
-    <link href="styles/bootstrap-theme.min.css" rel="stylesheet">
-    <link href="styles/theme.min.css" rel="stylesheet">
+    <script>
+        // *Experimental* defer loading of CSS snippet. Use with caution!
+        var l = document.createElement('link');
+        l.rel='stylesheet';
+        l.href='styles/all.min.css';
+        l.media='defer';
+        l.addEventListener('load', function() { l.media=''; }, false);
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(l, s);
+    </script>
+    <!-- no JS? Put fallback CSS links here. -->
+    <noscript>
+        <link href="dist/css/bootstrap.min.css" rel="stylesheet">
+        <link href="dist/css/bootstrap-theme.min.css" rel="stylesheet">
+        <link href="theme.min.css" rel="stylesheet">
+    </noscript>
     <!-- /CSS -->
+
+    <!-- Critical CSS -->
+    <style>
+        *, ::before, ::after { box-sizing: border-box; }
+        html { font-family: sans-serif; font-size: 62.5%; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); }
+        body { margin: 0px; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.428571429; color:
+            rgb(51, 51, 51); background-color: rgb(255, 255, 255); padding-top: 70px; padding-bottom: 30px; }
+        .navbar { position: relative; z-index: 1000; min-height: 50px; margin-bottom: 20px; border: 1px solid transparent;
+            border-top-left-radius: 4px; border-top-right-radius: 4px; border-bottom-right-radius: 4px; border-bottom-left-radius: 4px;
+            background-image: linear-gradient(rgb(255, 255, 255) 0px, rgb(248, 248, 248) 100%); -webkit-box-shadow: rgba(255, 255, 255,
+            0.14902) 0px 1px 0px inset, rgba(0, 0, 0, 0.0745098) 0px 1px 5px; box-shadow: rgba(255, 255, 255, 0.14902) 0px 1px 0px inset,
+            rgba(0, 0, 0, 0.0745098) 0px 1px 5px; background-repeat: repeat no-repeat; }
+        .navbar-fixed-top, .navbar-fixed-bottom { position: fixed; right: 0px; left: 0px; border-width: 0px 0px 1px; border-top-left-radius:
+            0px; border-top-right-radius: 0px; border-bottom-right-radius: 0px; border-bottom-left-radius: 0px; }
+        .navbar-fixed-top { top: 0px; z-index: 1030; }
+        .navbar-inverse { background-color: rgb(34, 34, 34); border-color: rgb(8, 8, 8); background-image: linear-gradient(rgb(60, 60, 60)
+            0px, rgb(34, 34, 34) 100%); background-repeat: repeat no-repeat; }
+        .navbar-static-top, .navbar-fixed-top, .navbar-fixed-bottom { border-top-left-radius: 0px; border-top-right-radius: 0px;
+            border-bottom-right-radius: 0px; border-bottom-left-radius: 0px; }
+        .container { padding-right: 15px; padding-left: 15px; margin-right: auto; margin-left: auto; max-width: 1170px; }
+        .navbar-header { float: left; }
+        .container > .navbar-header, .container > .navbar-collapse { margin-right: 0px; margin-left: 0px; }
+        button, input, select, textarea { margin: 0px; font-family: inherit; font-size: 100%; }
+        button, input { line-height: normal; }
+        button, select { text-transform: none; }
+        button, html input[type="button"], input[type="reset"], input[type="submit"] { cursor: pointer; -webkit-appearance: button; }
+        input, button, select, textarea { font-family: inherit; font-size: inherit; line-height: inherit; }
+        button, input, select[multiple], textarea { background-image: none; }
+        .navbar-toggle { position: relative; float: right; padding: 9px 10px; margin-top: 8px; margin-right: 15px; margin-bottom: 8px;
+            background-color: transparent; border: 1px solid transparent; border-top-left-radius: 4px; border-top-right-radius: 4px;
+            border-bottom-right-radius: 4px; border-bottom-left-radius: 4px; display: none; }
+        .navbar-inverse .navbar-toggle { border-color: rgb(51, 51, 51); }
+        .navbar-toggle .icon-bar { display: block; width: 22px; height: 2px; border-top-left-radius: 1px; border-top-right-radius: 1px;
+            border-bottom-right-radius: 1px; border-bottom-left-radius: 1px; }
+        .navbar-inverse .navbar-toggle .icon-bar { background-color: rgb(255, 255, 255); }
+        .navbar-toggle .icon-bar + .icon-bar { margin-top: 4px; }
+        a { color: rgb(66, 139, 202); text-decoration: none; }
+        .navbar-brand { float: left; padding: 15px; font-size: 18px; line-height: 20px; }
+        .navbar-brand, .navbar-nav > li > a { text-shadow: rgba(255, 255, 255, 0.247059) 0px 1px 0px; }
+        .navbar-inverse .navbar-brand { color: rgb(153, 153, 153); }
+        .navbar-inverse .navbar-brand, .navbar-inverse .navbar-nav > li > a { text-shadow: rgba(0, 0, 0, 0.247059) 0px -1px 0px; }
+        .navbar > .container .navbar-brand { margin-left: -15px; }
+        .collapse { display: none; }
+        .navbar-collapse { max-height: 340px; padding-right: 15px; padding-left: 15px; overflow-x: visible; border-top-width: 0px;
+            border-top-style: solid; border-top-color: transparent; box-shadow: none; width: auto; }
+        .navbar-collapse.collapse { padding-bottom: 0px; display: block !important; height: auto !important; overflow: visible !important; }
+        .navbar-inverse .navbar-collapse, .navbar-inverse .navbar-form { border-color: rgb(16, 16, 16); }
+        ul, ol { margin-top: 0px; margin-bottom: 10px; }
+        .nav { padding-left: 0px; margin-bottom: 0px; list-style: none; }
+        .navbar-nav { margin: 0px; float: left; }
+        .nav > li { position: relative; display: block; }
+        .navbar-nav > li { float: left; }
+        .nav > li > a { position: relative; display: block; padding: 10px 15px; }
+        .navbar-nav > li > a { padding-top: 15px; padding-bottom: 15px; line-height: 20px; }
+        .navbar-inverse .navbar-nav > li > a { color: rgb(153, 153, 153); }
+        .navbar-inverse .navbar-nav > .active > a, .navbar-inverse .navbar-nav > .active > a:hover, .navbar-inverse .navbar-nav > .active >
+        a:focus { color: rgb(255, 255, 255); background-color: rgb(8, 8, 8); }
+        .navbar .navbar-nav > .active > a { background-color: rgb(248, 248, 248); }
+        .navbar-inverse .navbar-nav > .active > a { background-color: rgb(34, 34, 34); }
+        .dropdown { position: relative; }
+        b, strong { font-weight: bold; }
+        .caret { display: inline-block; width: 0px; height: 0px; margin-left: 2px; vertical-align: middle; border-width: 4px 4px 0px;
+            border-style: solid solid dotted; border-top-color: rgb(0, 0, 0); border-right-color: transparent; border-left-color:
+            transparent; content: ''; }
+        .nav .caret { border-top-color: rgb(66, 139, 202); border-bottom-color: rgb(66, 139, 202); }
+        .navbar-inverse .navbar-nav > .dropdown > a .caret { border-top-color: rgb(153, 153, 153); border-bottom-color: rgb(153, 153, 153);
+        }
+        ul ul, ol ul, ul ol, ol ol { margin-bottom: 0px; }
+        .dropdown-menu { position: absolute; top: 100%; left: 0px; z-index: 1000; display: none; float: left; min-width: 160px; padding: 5px
+            0px; margin: 2px 0px 0px; font-size: 14px; list-style: none; background-color: rgb(255, 255, 255); border: 1px solid rgba(0, 0,
+            0, 0.14902); border-top-left-radius: 4px; border-top-right-radius: 4px; border-bottom-right-radius: 4px;
+            border-bottom-left-radius: 4px; -webkit-box-shadow: rgba(0, 0, 0, 0.172549) 0px 6px 12px; box-shadow: rgba(0, 0, 0, 0.172549)
+            0px 6px 12px; background-clip: padding-box; }
+        .navbar-nav > li > .dropdown-menu { margin-top: 0px; border-top-right-radius: 0px; border-top-left-radius: 0px; }
+        .dropdown-menu > li > a { display: block; padding: 3px 20px; clear: both; font-weight: normal; line-height: 1.428571429; color:
+            rgb(51, 51, 51); white-space: nowrap; }
+        .dropdown-menu .divider { height: 1px; margin: 9px 0px; overflow: hidden; background-color: rgb(229, 229, 229); }
+        .dropdown-header { display: block; padding: 3px 20px; font-size: 12px; line-height: 1.428571429; color: rgb(153, 153, 153); }
+        .jumbotron { padding: 30px; margin-bottom: 30px; font-size: 21px; font-weight: 200; line-height: 2.1428571435; color: inherit;
+            background-color: rgb(238, 238, 238); padding-top: 48px; padding-bottom: 48px; }
+        .container .jumbotron { border-top-left-radius: 6px; border-top-right-radius: 6px; border-bottom-right-radius: 6px;
+            border-bottom-left-radius: 6px; padding-right: 60px; padding-left: 60px; }
+        h1 { margin: 0.67em 0px; font-size: 2em; }
+        h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 { font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-weight:
+            500; line-height: 1.1; }
+        h1, h2, h3 { margin-top: 20px; margin-bottom: 10px; }
+        h1, .h1 { font-size: 36px; }
+        .jumbotron h1 { line-height: 1; color: inherit; font-size: 63px; }
+        p { margin: 0px 0px 10px; }
+        .jumbotron p { line-height: 1.4; }
+        .btn { display: inline-block; padding: 6px 12px; margin-bottom: 0px; font-size: 14px; font-weight: normal; line-height: 1.428571429;
+            text-align: center; white-space: nowrap; vertical-align: middle; cursor: pointer; border: 1px solid transparent;
+            border-top-left-radius: 4px; border-top-right-radius: 4px; border-bottom-right-radius: 4px; border-bottom-left-radius: 4px;
+            -webkit-user-select: none; }
+        .btn-primary { color: rgb(255, 255, 255); background-color: rgb(66, 139, 202); border-color: rgb(45, 108, 162); background-image:
+            linear-gradient(rgb(66, 139, 202) 0px, rgb(48, 113, 169) 100%); background-repeat: repeat no-repeat; }
+        .btn-lg { padding: 10px 16px; font-size: 18px; line-height: 1.33; border-top-left-radius: 6px; border-top-right-radius: 6px;
+            border-bottom-right-radius: 6px; border-bottom-left-radius: 6px; }
+        .btn-default, .btn-primary, .btn-success, .btn-info, .btn-warning, .btn-danger { text-shadow: rgba(0, 0, 0, 0.2) 0px -1px 0px;
+            -webkit-box-shadow: rgba(255, 255, 255, 0.14902) 0px 1px 0px inset, rgba(0, 0, 0, 0.0745098) 0px 1px 1px; box-shadow: rgba(255,
+            255, 255, 0.14902) 0px 1px 0px inset, rgba(0, 0, 0, 0.0745098) 0px 1px 1px; }
+        .navbar-default .navbar-toggle { border-color: rgb(221, 221, 221); }
+        .navbar-default .navbar-toggle .icon-bar { background-color: rgb(204, 204, 204); }
+    </style>
+    <!-- /Critical CSS -->
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
