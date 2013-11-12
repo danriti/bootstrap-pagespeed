@@ -4,7 +4,7 @@ bootstrap-pagespeed
 This repository displays how to get a perfect PageSpeed Insights score with a
 [Bootstrap example][5].
 
-## Breaking the PageSpeed barrier.
+### Breaking the PageSpeed barrier.
 
 |  #  | Commit | Mobile Score | Desktop Score |
 | --- | ------ | ------------ | ------------- |
