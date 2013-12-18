@@ -4,6 +4,9 @@ bootstrap-pagespeed
 This repository displays how to get a perfect PageSpeed Insights score with a
 [Bootstrap example][5].
 
+**UPDATE**: Check out this [comment][1] that highlights the correct
+mod_pagespeed settings to automate the steps below!
+
 ### Breaking the PageSpeed barrier.
 
 |  #  | Commit | Mobile Score | Desktop Score |
@@ -15,6 +18,7 @@ This repository displays how to get a perfect PageSpeed Insights score with a
 | 5 | [Leverage browser caching][25] | 92 | 98 |
 | 6 | [Remove render blocking CSS][26] | 100 | 100 |
 
+[1]: https://github.com/danriti/bootstrap-pagespeed/issues/4
 [5]: http://getbootstrap.com/examples/theme/
 [21]: https://github.com/danriti/bootstrap-pagespeed/commit/cfa89f748c39970889fb3ab84451966e3f5221ec
 [22]: https://github.com/danriti/bootstrap-pagespeed/commit/8abbcec18b302778c7eef3b510afdf58024d10b5
